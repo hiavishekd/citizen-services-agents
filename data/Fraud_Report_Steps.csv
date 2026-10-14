@@ -1,5 +1,5 @@
 step,action,source_ids,data_status
 1,Call 1930 immediately if money was taken. A state police operator notes the details and registers a ticket.,S17; S18,REAL_SOURCED
 2,You receive an SMS with an acknowledgement number. Submit the full details on cybercrime.gov.in within 24 hours using that number.,S16; S18,REAL_SOURCED
-3,"Contact the bank, card provider, wallet or UPI app as well.",,REAL_SOURCED
-4,"Keep ready: your name, mobile number, nearest police station, district, bank name, amount, account or UPI ID debited, transaction IDs, and a short description of what happened.",,REAL_SOURCED
+3,"Contact the bank, card provider, wallet or UPI app as well.",,UNVERIFIED_SOURCE_NEEDED
+4,"Keep ready: your name, mobile number, nearest police station, district, bank name, amount, account or UPI ID debited, transaction IDs, and a short description of what happened.",S38,REAL_SOURCED (core details only)

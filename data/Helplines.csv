@@ -1,7 +1,7 @@
 helpline_id,service,number_or_contact,hours,used_by,source_ids,data_status
-H-112,"All-in-one emergency (police, fire, medical)",112,24x7,Health; Disaster,,REAL_SOURCED
-H-108,Ambulance / emergency medical response,108,24x7 (varies by state),Health; Disaster,,REAL_SOURCED
-H-102,Free ambulance service (varies by state),102,Varies by state,Health,,REAL_SOURCED
+H-112,"All-in-one emergency (police, fire, medical)",112,24x7,Health; Disaster,S35; S36,REAL_SOURCED
+H-108,Ambulance / emergency medical response,108,24x7 (varies by state),Health; Disaster,S37,REAL_SOURCED (state page)
+H-102,Free ambulance service (varies by state),102,Varies by state,Health,S35,REAL_SOURCED (number only; 'free' not confirmed)
 H-1930,National cybercrime helpline (financial fraud),1930,24 hours,Fraud,S16; S17,REAL_SOURCED
 H-1915,National Consumer Helpline,1915 or 1800-11-4000; WhatsApp +91 88000 01915,8 AM to 8 PM,Legal,S13; S14,REAL_SOURCED
 H-15100,NALSA free legal services helpline,15100,Confirm hours,Legal,S15,REAL_SOURCED

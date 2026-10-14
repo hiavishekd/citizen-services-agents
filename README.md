@@ -34,3 +34,15 @@ export ANTHROPIC_API_KEY="..."        # never commit your key; see .env.example
 ```bash
 .venv/bin/python -I scripts/xlsx_to_csv.py
 ```
+
+## Data notes
+
+Rows still needing an official source (`UNVERIFIED_SOURCE_NEEDED`):
+
+- `data/Fraud_Report_Steps.csv`, step 3 ("Contact the bank, card provider, wallet or UPI app as well.").
+
+Rows with a partial source, as stated in their `data_status`:
+
+- `data/Helplines.csv`, H-102: the number is confirmed, "free" is not.
+- `data/Helplines.csv`, H-108: confirmed on a state health mission page only.
+- `data/Fraud_Report_Steps.csv`, step 4: the source lists name, mobile number, address and transaction details only.
