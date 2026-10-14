@@ -2,4 +2,5 @@
 # Add one line per network, e.g.  "citizen_services/my_network.hocon": true,
 {
     "citizen_services/scheme_navigator.hocon": true,
+    "citizen_services/health_triage.hocon": true,
 }

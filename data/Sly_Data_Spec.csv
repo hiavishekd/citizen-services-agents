@@ -1,0 +1,8 @@
+field,example_value,sensitivity,handling,visible_to_llm,allowed_tools,retention
+patient_name,Asha Sample (fictional),Personal,sly_data only,No,"get_patient_context tool, reminder tool",Delete after follow-up window
+phone_number,+91-00000-00000 (placeholder),Personal,sly_data only,No,reminder tool,Delete after follow-up window
+village_or_location,Anandpur (fictional),Personal,sly_data only,No,find_facilities tool (distance lookup),Delete after session
+health_id,HEALTH-ID-PLACEHOLDER,Personal,sly_data only,No,none in demo,Do not collect in the demo
+age_band,0-5 years,Needed for triage,Prompt allowed,Yes,all triage agents,Session only
+symptom_text,"Fever for 2 days, breathing fast",Needed for triage,Prompt allowed after name and place scrubbed,Yes,all triage agents,Session only
+session_token,tok_9f3a (fictional),Technical,sly_data,No,all coded tools,Session only

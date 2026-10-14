@@ -1,0 +1,5 @@
+facility_id,name,type,village_or_town,block,district,state,distance_km_from_demo_village,services,hours,ambulance,data_status
+FAC-01,Sample Sub-centre Anandpur,Sub-centre,Anandpur,Sampleganj,Demo District,West Bengal,2,"Basic care, immunisation",Mon-Sat 9:00-15:00,No,SYNTHETIC
+FAC-02,Sample PHC Sampleganj,Primary Health Centre,Sampleganj,Sampleganj,Demo District,West Bengal,6,"OPD, labour room, lab",24x7,Yes (108),SYNTHETIC
+FAC-03,Sample CHC Riverpur,Community Health Centre,Riverpur,Riverpur,Demo District,West Bengal,18,"Specialists, X-ray, 30 beds",24x7,Yes (108),SYNTHETIC
+FAC-04,Sample District Hospital,District Hospital,Demo Town,Demo Town,Demo District,West Bengal,35,"Emergency, ICU, paediatrics",24x7,Yes (108),SYNTHETIC
