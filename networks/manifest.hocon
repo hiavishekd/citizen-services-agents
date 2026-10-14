@@ -1,0 +1,5 @@
+# Citizen Services Agents: networks served by the studio.
+# Add one line per network, e.g.  "citizen_services/my_network.hocon": true,
+{
+    "citizen_services/scheme_navigator.hocon": true,
+}

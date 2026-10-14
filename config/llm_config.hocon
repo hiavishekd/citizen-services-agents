@@ -1,0 +1,9 @@
+# Anthropic-only LLM config for Citizen Services Agents.
+# "claude-sonnet" is resolved by neuro-san to the latest Sonnet model.
+# Requires the ANTHROPIC_API_KEY environment variable.
+{
+    "llm_config": {
+        "class": "anthropic",
+        "model_name": "claude-sonnet"
+    }
+}

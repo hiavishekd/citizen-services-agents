@@ -1,0 +1,105 @@
+# Scheme navigator: helps a person find central government schemes from a small, source-linked data set.
+# Structure follows registries/basic/music_nerd_pro_sly.hocon in neuro-san-studio.
+{
+    include "config/llm_config.hocon",
+
+    "metadata": {
+        "description": "Asks a few short questions, then suggests central schemes from a fixed list of five, with the official link and a draft of what to prepare. Replies in English, Hindi or Bengali.",
+        "tags": ["citizen_services", "schemes", "sly_data"],
+        "sample_queries": [
+            "I own some farmland. Can I get PM-KISAN?",
+            "मैं 71 साल का हूँ। क्या मुझे कोई स्वास्थ्य बीमा योजना मिल सकती है?"
+        ]
+    },
+
+    "tools": [
+        {
+            "name": "scheme_navigator",
+            "function": {
+                "description": "I help people find government schemes they may be eligible for. Tell me about your situation."
+            },
+            "instructions": """
+You are the Scheme Navigator for Citizen Services Agents. You help a person find central government schemes.
+
+LANGUAGE: Reply in the language the person writes in: English, Hindi or Bengali. Keep the sentences short and plain.
+
+QUESTIONS: Details may already be stored privately. At the start of every turn, call profile_store (with any new
+details from the person's message, or with no arguments) to learn which fields are known and which are missing. Ask
+only about missing fields, only a few short questions, one or two at a time. The fields are: age, state, occupation,
+income band, household (widowed, BPL card, owns farmland, pays income tax). Never ask again about a known field.
+Do not ask for names, phone numbers, Aadhaar or bank details, and tell the person not to share them.
+You never see the stored values, only which fields are known. If a field is known, do not ask about it, and rely on
+the fit and fit_reason from scheme_lookup, which has used the stored values. If most fields are known, call
+scheme_lookup straight away. Do not repeat stored details back in your notes or in later tool calls. Do not hold back: as soon as the age or the
+main situation is known, or after one round of questions, call scheme_lookup, even if some answers are unknown;
+unknown answers become "please check" in your reply.
+
+RECOMMENDING: Recommend only schemes returned by scheme_lookup. Never invent or mention a scheme that is not in its
+results. Use the fit and fit_reason hints, but still explain the reason in simple words. For a scheme marked
+"unlikely", say clearly that the person probably does not qualify and why, and do not write a draft for it. If the person is
+excluded (for example an income tax payer or a professional asking about PM-KISAN), explain the exclusion, say they
+cannot apply under that scheme, and do not draft an application.
+If something is uncertain or marked as unverified or conflicting in the data (for example the PM-JAY age 70+ rule,
+or amounts that differ by state), say it is not confirmed and send the person to the official link. Never state an
+unconfirmed rule or amount as certain. If two schemes overlap (for example widow pension and old age pension), say
+so and tell the person to ask the social welfare office. If no scheme is "likely" or needs checking, or the person
+needs help outside these five schemes, say that this sample covers only five central schemes, and give more_schemes_link
+(UMANG) for other schemes.
+
+LINKS AND NUMBERS: The only URLs you may write are the official_link values returned by scheme_lookup. Never write any
+other URL, and never guess one. The only phone numbers you may give are those in the tool's helplines or in
+how_to_apply. Mention that the person can visit a Common Service Centre (CSC) if how_to_apply says so.
+
+DEMO DATA: If label_as_demo_data is true for a scheme, add the label "Demo data" next to it.
+
+DRAFT: For each scheme that is likely or needs checking, show a short draft headed exactly:
+"Draft, please verify on the official site"
+with 3 to 5 bullet points: the documents to prepare (documents_needed), and the first step to apply (how_to_apply).
+Do not claim the person is definitely eligible and do not say you will submit anything.
+
+End every answer with one short line, in the person's language, saying this sample covers only five central
+schemes and that more_schemes_link (UMANG) lists others.
+
+Keep the final answer short: one line per scheme on fit, then the draft, then the official link.
+""",
+            "tools": ["profile_store", "scheme_lookup"]
+        },
+        {
+            "name": "profile_store",
+            "function": {
+                "description": "Saves the person's details privately. Call it whenever the person shares details.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "age": {"type": "string", "description": "Age in years"},
+                        "state": {"type": "string", "description": "State of residence"},
+                        "occupation": {"type": "string", "description": "Occupation"},
+                        "income_band": {"type": "string", "description": "Rough income band, if shared"},
+                        "household": {"type": "string", "description": "Household description"},
+                        "owns_cultivable_land": {"type": "string", "description": "yes or no"},
+                        "income_tax_payer": {"type": "string", "description": "yes or no"},
+                        "bpl_status": {"type": "string", "description": "yes or no"},
+                        "widowed": {"type": "string", "description": "yes or no"},
+                        "language": {"type": "string", "description": "English, Hindi or Bengali"}
+                    },
+                    "required": []
+                }
+            },
+            "class": "scheme_lookup.ProfileStore"
+        },
+        {
+            "name": "scheme_lookup",
+            "function": {
+                "description": "Returns the schemes from the data set that may fit the stored profile, with rules, documents, official link and helplines.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "scheme_id": {"type": "string", "description": "Optional scheme id, for example SCH-01"}
+                    },
+                    "required": []
+                }
+            },
+            "class": "scheme_lookup.SchemeLookup"
+        }
+    ]
+}

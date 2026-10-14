@@ -1,0 +1,17 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Local clone of the upstream framework (not part of this repo)
+neuro-san-studio/
+
+# Logs and OS files
+logs/
+.DS_Store

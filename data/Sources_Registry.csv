@@ -1,0 +1,30 @@
+source_id,name,owner,url,category,used_by_modules,verification_status,checked_on
+S01,PM-KISAN official portal,Ministry of Agriculture and Farmers Welfare,https://pmkisan.gov.in,Scheme,Scheme navigator; Farmer,Seen in search results 2026-10-14,2026-10-14
+S02,PM-KISAN FAQ (PDF),PM-KISAN,https://fw.pmkisan.gov.in/Documents/FAQPMKISAN.pdf,Scheme,Scheme navigator,Seen in search results 2026-10-14,2026-10-14
+S03,West Bengal govt: PM-KISAN page,Govt of West Bengal,https://wb.gov.in/government-schemes-details-pradhan-mantri-kisan-samman-nidhi.aspx,Scheme,Scheme navigator,Seen in search results 2026-10-14,2026-10-14
+S04,PM-JAY (Ayushman Bharat) portal,National Health Authority,https://pmjay.gov.in,Scheme,Scheme navigator; Health,Seen in search results 2026-10-14,2026-10-14
+S05,West Bengal govt: PM-JAY page,Govt of West Bengal,https://wb.gov.in/government-schemes-details-pradhan-mantri-ayushman-bharat-yojana.aspx,Scheme,Scheme navigator,Seen in search results 2026-10-14,2026-10-14
+S06,NSAP portal,Ministry of Rural Development,https://nsap.nic.in,Scheme,Scheme navigator,Referenced by official/secondary pages; confirm access,2026-10-14
+S07,NSAP pension benefits (Vikaspedia),Vikaspedia (MeitY-supported),https://en.vikaspedia.in/viewcontent/social-welfare/social-security/pension-benefits-under-nsap?lgn=en,Scheme,Scheme navigator,Seen in search results 2026-10-14,2026-10-14
+S09,NGO Darpan,NITI Aayog and NIC,https://ngodarpan.gov.in,NGO directory,Food waste,Seen in search results 2026-10-14,2026-10-14
+S10,FSSAI food donating agency list,FSSAI,https://sharefood.fssai.gov.in/agency-list.html,NGO directory,Food waste,Seen in search results 2026-10-14,2026-10-14
+S11,Indian Food Sharing Alliance overview (PDF),FSSAI,https://fssai.gov.in/upload/knowledge_hub/696995b34c094e60f8Indian%20Food%20Sharing%20Alliance.pdf,Food safety,Food waste,Seen in search results 2026-10-14,2026-10-14
+S12,"Save Food, Share Food page",FSSAI East Region,https://eastregion.fssai.gov.in/Save-Food-Share-Food.php,Food safety,Food waste,Seen in search results 2026-10-14,2026-10-14
+S13,National Consumer Helpline portal,Dept of Consumer Affairs,https://consumerhelpline.gov.in,Legal,Legal aid,Seen in search results 2026-10-14,2026-10-14
+S14,NCH 17-language helpline release (PDF),Dept of Consumer Affairs / PIB,https://consumeraffairs.nic.in/sites/default/files/24-July-2024_1.pdf,Legal,Legal aid,Seen in search results 2026-10-14,2026-10-14
+S15,NALSA short code 15100 notice,Dept of Telecommunications,https://dot.gov.in/hi/node/5359,Legal,Legal aid,Seen in search results 2026-10-14,2026-10-14
+S16,National Cyber Crime Reporting Portal,Ministry of Home Affairs (I4C),https://cybercrime.gov.in,Fraud,Fraud shield,Seen in search results 2026-10-14,2026-10-14
+S17,Rajya Sabha answer on helpline 1930 (PDF),Ministry of Home Affairs,https://www.mha.gov.in/MHA1/Par2017/pdfs/par2022-pdfs/RS06042022/3908.pdf,Fraud,Fraud shield,Seen in search results 2026-10-14,2026-10-14
+S18,Citizen Financial Cyber Fraud Reporting System,Vikaspedia (from PIB),https://egovernance.vikaspedia.in/viewcontent/e-governance/citizen-services/citizen-financial-cyber-fraud-reporting-and-management-system?lgn=en,Fraud,Fraud shield,Seen in search results 2026-10-14,2026-10-14
+S21,"Kisan Call Centre (Parliament answer, PDF)",Ministry of Agriculture and Farmers Welfare,https://eparlib.nic.in/bitstream/123456789/662577/1/16991.pdf,Farmer,Farmer,Seen in search results 2026-10-14,2026-10-14
+S22,Kisan Call Centre page,TNAU,https://agritech.tnau.ac.in/kisan/kisan.html,Farmer,Farmer,Seen in search results 2026-10-14,2026-10-14
+S23,"IMD weather helpline (Lok Sabha answer, 2013)",Ministry of Agriculture,https://eparlib.nic.in/bitstream/123456789/640560/1/140222.pdf,Farmer,Farmer,Dated source; confirm number is current,2026-10-14
+S24,Kisan Suvidha app features,Vikaspedia,https://vikaspedia.in/agriculture/ict-applications-in-agriculture/kisan-call-center-app,Farmer,Farmer,Seen in search results 2026-10-14,2026-10-14
+S25,Agmarknet (mandi prices),Ministry of Agriculture,https://agmarknet.gov.in,Farmer data,Farmer,Referenced by official/secondary pages; confirm access,2026-10-14
+S26,Open Government Data portal,Govt of India,https://data.gov.in,Open data,Farmer; Health; Disaster,"Known official domain; not opened this session, confirm",2026-10-14
+S27,India Meteorological Department,Ministry of Earth Sciences,https://mausam.imd.gov.in,Weather,Farmer; Disaster,"Known official domain; not opened this session, confirm",2026-10-14
+S28,National Disaster Management Authority,Govt of India,https://ndma.gov.in,Disaster,Disaster,"Known official domain; not opened this session, confirm",2026-10-14
+S29,DIKSHA learning platform,Ministry of Education,https://diksha.gov.in,Education,Education tutors,"Known official domain; not opened this session, confirm",2026-10-14
+S30,NCERT,Ministry of Education,https://ncert.nic.in,Education,Education tutors,"Known official domain; not opened this session, confirm",2026-10-14
+S33,UMANG app portal,Govt of India,https://umang.gov.in,Services,Scheme navigator,Referenced by official/secondary pages; confirm access,2026-10-14
+S34,Common Service Centres,CSC e-Governance Services,https://csc.gov.in,Services,Scheme navigator,Referenced by official/secondary pages; confirm access,2026-10-14

@@ -1,0 +1,11 @@
+event_id,week_start,module,event_type,district,count,shown_on_dashboard,data_status
+EV-01,2026-10-05,Scheme navigator,Eligible but did not start application,Demo District A,42,42,SYNTHETIC
+EV-02,2026-10-05,Scheme navigator,Eligible but did not start application,Demo District B,7,suppressed,SYNTHETIC
+EV-03,2026-10-05,Health triage,Fever with fast breathing (child),Demo District A,14,14,SYNTHETIC
+EV-04,2026-10-05,Health triage,Fever with fast breathing (child),Demo District B,5,suppressed,SYNTHETIC
+EV-05,2026-10-05,Farmer advisory,Price drop alert issued (tomato),Demo District A,31,31,SYNTHETIC
+EV-06,2026-10-05,Legal aid,Deposit dispute query,Demo District A,12,12,SYNTHETIC
+EV-07,2026-10-05,Fraud shield,KYC scam message checked,Demo District A,58,58,SYNTHETIC
+EV-08,2026-10-05,Fraud shield,KYC scam message checked,Demo District B,9,suppressed,SYNTHETIC
+EV-09,2026-10-05,Food waste matcher,Surplus meals matched,Demo District A,240,240,SYNTHETIC
+EV-10,2026-10-05,Disaster coordinator,Reports received (simulation),Demo District A,20,20,SYNTHETIC
