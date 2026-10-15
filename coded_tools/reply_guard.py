@@ -89,6 +89,20 @@ def scrub_personal(text: str, sly_data: Dict[str, Any]) -> tuple:
     return text, count
 
 
+def drop_sentences(text: str, pattern: str) -> str:
+    """Drop every sentence or bullet that matches the pattern a network has set in sly_data."""
+    if not pattern:
+        return text
+    regex = re.compile(pattern)
+    out = []
+    for line in text.split("\n"):
+        parts = re.split(r"(?<=[.!?।])\s+", line)
+        kept = [p for p in parts if not regex.search(p)]
+        if kept or not line.strip():
+            out.append(" ".join(kept))
+    return "\n".join(out)
+
+
 class ReplyGuard(CodedTool):
     """Removes every link or web address that is not in Sources_Registry.csv."""
 
@@ -100,4 +114,8 @@ class ReplyGuard(CodedTool):
         """
         cleaned, removed = clean_text(str(args.get("draft_reply", "")))
         cleaned, personal_removed = scrub_personal(cleaned, sly_data)
+        cleaned = drop_sentences(cleaned, sly_data.get("drop_sentences_matching"))
+        phrase = sly_data.get("require_phrase")
+        if phrase and phrase.lower() not in cleaned.lower():
+            cleaned = cleaned.rstrip() + f"\n\nNote: this is {phrase}."
         return {"final_reply": cleaned, "links_removed": len(removed), "personal_values_removed": personal_removed}

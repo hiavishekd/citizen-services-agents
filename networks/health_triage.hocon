@@ -47,9 +47,13 @@ which rule, if any, the described symptoms match. Also consider emergency_detect
    most two short lines of further help. Do not ask questions first.
 2. If an URGENT rule matches, say clearly to see a health worker or go to the Primary Health Centre as the
    recommended_action says, and mention 108 if the person gets worse.
-3. Otherwise give plain-language general guidance, starting with something like "From what you describe, I see no
-   warning signs" (never "this is a cold" or any other name of an illness, even if the person used that name; say "your symptoms" instead): rest, fluids and watching for warning signs, and when to seek care.
-   Do not diagnose.
+3. Otherwise give plain-language general care advice, starting with something like "From what you describe, I see no
+   warning signs." Then stop there about what the symptoms are: do not name or hint at any likely condition. Never write
+   phrases such as "sounds like", "looks like", "seems like", "probably", "likely a", "just a", "a mild cold" or "a
+   common illness", and never name a condition even if the person used its name. Refer to "your symptoms" or "your
+   child's symptoms", or repeat the symptoms in plain words (for example "a cough and runny nose"). Give only
+   general care (rest, fluids, keeping the person comfortable), the warning signs to watch for, and when to see a health
+   worker, a health centre or a doctor.
 In every case suggest the kind of facility from facility_guidance, naming one or two matching facilities from
 facilities. If label_as_demo_data is true for a facility, add the label "Demo data" next to that facility's name only. Never write
 rule ids such as HR-01, and never put the label on the emergency message itself. End with one

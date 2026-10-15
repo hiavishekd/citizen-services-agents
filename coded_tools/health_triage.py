@@ -15,6 +15,10 @@ from neuro_san.interfaces.coded_tool import CodedTool
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 DEMO_MARKERS = ("AUTHORED_DEMO", "SYNTHETIC")
 PERSONAL_FIELDS = ["name", "phone", "village", "age_band"]
+DIAGNOSIS_HINT = (r"(?i)\b(sounds?|looks?|seems?|appears?) (like|to be)\b|\bprobably\b|\blikely (a|an|just)\b|"
+                  r"\bjust a\b|\b(a|an) (mild|common|simple|minor) (cold|flu|infection|fever|illness|viral)\b|"
+                  r"\bviral\b|\bthis is (a|an)\b|\byou (have|may have|might have)\b|"
+                  r"\b(a|your|the|child's|her|his|their) (common )?cold\b|\bcold and cough\b|\bcough and cold\b|\bflu\b")
 
 # English keyword hints per rule, a safety net on top of the model's own reading of the symptoms.
 KEYWORDS = {
@@ -67,6 +71,8 @@ class TriageLookup(CodedTool):
         :param sly_data: Reads the "personal" dictionary (only to know the village).
         :return: Red-flag rules with keyword hints, emergency numbers, and facilities.
         """
+        # Backstop for the reply guard: sentences that hint at a likely condition are dropped from the final reply.
+        sly_data["drop_sentences_matching"] = DIAGNOSIS_HINT
         text = re.sub(r"[\d+\-()]{6,}", " ", str(args.get("symptoms_en", ""))).lower()
         rules = []
         for row in _read("Health_RedFlags"):

@@ -4,4 +4,5 @@
     "citizen_services/scheme_navigator.hocon": true,
     "citizen_services/health_triage.hocon": true,
     "citizen_services/fraud_shield.hocon": true,
+    "citizen_services/governance_dashboard.hocon": true,
 }
