@@ -73,6 +73,16 @@ read -rs ANTHROPIC_API_KEY; export ANTHROPIC_API_KEY   # paste your key (it is n
 ```
 
 Then open http://localhost:4173 and pick a network from the `citizen_services` folder in the list.
+Press Ctrl+C in the terminal running `run.sh` to stop the server.
+
+Notes from a fresh-clone run:
+
+- `check.sh` is expected to report "1/7 valid, 6 warnings": the six warnings are other providers whose keys are not
+  set, which this project does not use. The line that matters at the end is "All LLM configurations are working."
+- `check.sh` prints a short masked preview of the key (first and last few characters). Do not paste its output into
+  public places.
+- On a machine with a warm uv cache, `setup.sh` took about 11 seconds. A first run downloads Python 3.12 and the
+  packages and will take longer, depending on the connection.
 
 **No key is stored in this repository.** The only environment file is `.env.example`, which has an empty value.
 Judges can use a different provider by editing [config/llm_config.hocon](config/llm_config.hocon) (set `class` and
