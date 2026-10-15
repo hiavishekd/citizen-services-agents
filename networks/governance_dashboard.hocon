@@ -53,6 +53,15 @@ be exactly the final_reply it returns, with nothing added, removed or reworded.
 
 If the question is not about the dashboard data, say briefly that you can only answer questions about the grouped counts.
 """,
+            # Session state the chat app sends back on the next turn (the server keeps no sly_data itself).
+            "allow": {
+                "to_upstream": {
+                    "sly_data": {
+                        "released": true,
+                        "require_phrase": true,
+                    }
+                }
+            },
             "tools": ["dashboard_query", "reply_guard"]
         },
         {

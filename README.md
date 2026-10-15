@@ -88,6 +88,21 @@ Notes from a fresh-clone run:
 Judges can use a different provider by editing [config/llm_config.hocon](config/llm_config.hocon) (set `class` and
 `model_name` to a provider the studio supports) and exporting that provider's key instead.
 
+## Optional chat app
+
+A small Gradio chat page is included as an alternative to the studio UI. It keeps the conversation and the session
+data for each browser session, so multi-turn chats work, and picking a different network starts a new conversation.
+The banner on the page reads "Prototype. Uses demo data. Not official advice." The app holds no API key; only the
+server talks to the model.
+
+```bash
+./scripts/run.sh          # terminal 1: the Neuro SAN server on port 8080 (keep it running)
+./scripts/run_app.sh      # terminal 2: the chat app, then open http://localhost:7860
+```
+
+If the server is not running, the app says so in plain words instead of failing. If you ran `setup.sh` before the app
+was added, run it again once to install Gradio.
+
 ## Try these prompts
 
 | Network | Prompt |
@@ -137,7 +152,7 @@ There is no automated test suite yet. The tests below were run by hand, one prom
 | `scheme_navigator` | The 5 personas in `Personas_Tests.csv` (Bengali, Hindi x3, English) plus a Hindi farmer prompt | 6 of 6 pass. Every link in every reply is in the registry. |
 | `health_triage` | Red flag in Hindi, red flag in Bengali, mild case in English, medicine-dose request, injection attempt, message with a fictional name and phone | 6 of 6 pass. Emergency message with 108 and 112 comes first in both red-flag cases. |
 | `fraud_shield` | Fake KYC SMS (English), fake bank call (Hindi), lottery message (Bengali), harmless message, injection attempt, message with a fictional name and phone | 6 of 6 pass. No scam link or stored name appears in any reply. |
-| `governance_dashboard` | Normal question, small cell, request for an individual's record, differencing attempt, injection attempt, Hindi question | 6 of 6 pass. See the differencing caveat below. |
+| `governance_dashboard` | Normal question, small cell, request for an individual's record, differencing attempt, injection attempt, Hindi question | 6 of 6 pass. The differencing refusal also held in a two-question session through the chat app. |
 
 Some tests failed at first and were fixed: the family-benefit scheme was drafted when it did not apply, an English
 prompt once got a Hindi reply, a fraud reply greeted the person by name, and health replies repeated "cold" from the
@@ -161,8 +176,8 @@ For the other networks leave out `--sly_data` and change `--agent` to `citizen_s
 ## Known limits
 
 - Tests are one-shot: one prompt, one reply. Multi-turn conversations and the browser UI were not systematically
-  tested. The dashboard's differencing refusal was tested with a hand-seeded history and with a direct two-call test of
-  the tool, not in a live two-question session.
+  tested in the studio UI. The dashboard's differencing refusal was also checked in a live two-question session through
+  the chat app (the second question was refused; the same question in a new session was answered), but only once.
 - Keyword hints in the health and fraud tools are English only. Hindi and Bengali matching relies on the model's own
   reading of the message.
 - The dashboard's differencing guard compares pairs of answers only. A chain of three or more questions could still

@@ -70,6 +70,14 @@ Keep the final answer short: one line per scheme on fit, then the draft, then th
 FINAL STEP: Before you answer, call reply_guard with your complete draft reply as draft_reply. Your final answer must
 be exactly the final_reply it returns, with nothing added, removed or reworded.
 """,
+            # Session state the chat app sends back on the next turn (the server keeps no sly_data itself).
+            "allow": {
+                "to_upstream": {
+                    "sly_data": {
+                        "profile": true,
+                    }
+                }
+            },
             "tools": ["profile_store", "scheme_lookup", "reply_guard"]
         },
         {

@@ -64,6 +64,15 @@ be exactly the final_reply it returns, with nothing added, removed or reworded. 
 
 If the message is not about health, say briefly that you can only help with health guidance.
 """,
+            # Session state the chat app sends back on the next turn (the server keeps no sly_data itself).
+            "allow": {
+                "to_upstream": {
+                    "sly_data": {
+                        "personal": true,
+                        "drop_sentences_matching": true,
+                    }
+                }
+            },
             "tools": ["personal_details", "triage_lookup", "reply_guard"]
         },
         {

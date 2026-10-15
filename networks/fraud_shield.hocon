@@ -61,6 +61,14 @@ FINAL STEP: Before you answer, call reply_guard with your complete draft reply a
 be exactly the final_reply it returns, with nothing added, removed or reworded.
 
 """,
+            # Session state the chat app sends back on the next turn (the server keeps no sly_data itself).
+            "allow": {
+                "to_upstream": {
+                    "sly_data": {
+                        "personal": true,
+                    }
+                }
+            },
             "tools": ["shared_details", "fraud_lookup", "reply_guard"]
         },
         {
