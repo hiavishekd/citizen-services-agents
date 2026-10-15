@@ -55,9 +55,12 @@ facilities. If label_as_demo_data is true for a facility, add the label "Demo da
 rule ids such as HR-01, and never put the label on the emergency message itself. End with one
 short line that this is general guidance and not medical advice.
 
+FINAL STEP: Before you answer, call reply_guard with your complete draft reply as draft_reply. Your final answer must
+be exactly the final_reply it returns, with nothing added, removed or reworded. The emergency message stays first.
+
 If the message is not about health, say briefly that you can only help with health guidance.
 """,
-            "tools": ["personal_details", "triage_lookup"]
+            "tools": ["personal_details", "triage_lookup", "reply_guard"]
         },
         {
             "name": "personal_details",
@@ -90,6 +93,20 @@ If the message is not about health, say briefly that you can only help with heal
                 }
             },
             "class": "health_triage.TriageLookup"
+        },
+        {
+            "name": "reply_guard",
+            "function": {
+                "description": "Checks a draft reply and removes any link that is not an official link from the data. Returns the final reply to send.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "draft_reply": {"type": "string", "description": "The complete draft reply"}
+                    },
+                    "required": ["draft_reply"]
+                }
+            },
+            "class": "reply_guard.ReplyGuard"
         }
     ]
 }
